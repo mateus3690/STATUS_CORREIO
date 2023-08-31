@@ -18,7 +18,7 @@
   - 1° crie dentro do caminho .github a seguinte pasta e arquivo:
     >> .github/workflows/automacao.yml
 
-  -2° depois dentro do automacao.yml insira as seguintes configurações:
+  - 2° depois dentro do automacao.yml insira as seguintes configurações:
    
   
       name: Automação com Selenium
