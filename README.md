@@ -1,19 +1,19 @@
 # IA_CORREIO
 
-* Forma Manual:
-  
  - 1° Clone o projeto:
    >> git clone https://github.com/mateus3690/STATUS_CORREIO.git
-
- - 2° Abra o CMD no caminho do projeto e execute o comando:
+   
+* Execução da Forma Manual:
+  
+ - 1° Abra o CMD no caminho do projeto e execute o comando:
    >> pip install -r ./requirements.txt
  
- - 3° Configure o arquivo .env com base no .env.exemple
+ - 2° Configure o arquivo .env com base no .env.exemple
 
- - 4° Se tudo tiver configurado execute o arquivo __init__.py:
+ - 3° Se tudo tiver configurado execute o arquivo __init__.py:
    >> python ./__init__.py
 
-* Forma automatica:
+* Execução da Forma automatica:
 
   - 1° crie dentro do caminho .github a seguinte pasta e arquivo:
     >> .github/workflows/automacao.yml
