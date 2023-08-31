@@ -16,34 +16,37 @@
 * Forma automatica:
 
   - 1° crie dentro do caminho .github a seguinte pasta e arquivo:
-    >> workflows/automacao.yml
+    >> .github/workflows/automacao.yml
 
   -2° depois dentro do automacao.yml insira as seguintes configurações:
    
   
-name: Automação com Selenium
+      name: Automação com Selenium
+      
+      on:
+        schedule:
+          - cron: '0 */2 * * *'  # a cada 2hs
 
-on:
-  schedule:
-    - cron: '0 */2 * * *'  # a cada 2hs
+      jobs:
+        automacao:
+          runs-on: ubuntu-latest
+  
+          steps:
+          - name: Checkout do código
+            uses: actions/checkout@v2
+      
+          - name: Configurar Python
+            uses: actions/setup-python@v2
+            with:
+              python-version: 3.x
+      
+          - name: Instalar dependências
+            run: |
+              python -m pip install --upgrade pip
+              pip install -r ./requirements.txt
+      
+          - name: Executar script
+            env:
+              SENHA: ${{ secrets.SENHA_SECRETA }}
+            run: python ./__init__.py
 
-jobs:
-  automacao:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout do código
-      uses: actions/checkout@v2
-
-    - name: Configurar Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.x
-
-    - name: Instalar dependências
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r ./requirements.txt
-
-    - name: Executar script
-      run: python ./__init__.py
