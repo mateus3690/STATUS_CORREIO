@@ -1,5 +1,5 @@
 env
 geckodriver.log
 .env
-__pycache__/
+____pycache__/
 *.pyc
